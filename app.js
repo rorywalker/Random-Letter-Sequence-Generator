@@ -1,5 +1,4 @@
 
-
 (function () {
 
 	var btnLetter = document.getElementById('btnLetter');
@@ -10,40 +9,46 @@
 	function generateLetterSequences() {
 		var string1 = document.getElementById('string1').value;
 			string1 = string1.toLowerCase();
-			string1 = string1.replace(/[!@#$%^&*?,.:;\d]/g, "");																						
-			//console.log('string1 = ' + string1);
-			//console.log('string1.length = ' + string1.length);
+			string1 = string1.replace(/[!@#$%^&*?,.:;\d]/g, "");
+		
 		var length1 = document.getElementById('length1').value;
 			length1 = parseInt(length1);
-			//console.log('length = ' + length1);
+		
 		var quantity1 = document.getElementById('quantity1').value;
 			quantity1 = parseInt(quantity1);
 			quantity1+= 1;																								
-			//console.log('quantity = ' + quantity1);
+		
 		var results1 = document.getElementById('results1');
+		
 		var quantityX = 1;
-  		var tempArr = [];
-  		var outputArr = [];
-  		while (quantityX <= quantity1) {
-	  		var lengthX = 1;
-	    		while(lengthX <= length1) {
+  		
+		var tempArr = [];
+  		
+		var outputArr = [];
+  		
+		while (quantityX <= quantity1) {
+	
+			var lengthX = 1;
+	    		
+			while(lengthX <= length1) {
 		    		var number = Math.floor(Math.random()*string1.length+1);
-					//console.log('number = ' + number);
+
 		      			tempArr.push(string1[number]);
-						//console.log('tempArr = ' + tempArr);
+						
 	        			lengthX++;
 	    		}
   			quantityX++;
-		}
+		}		
+		
 	    var tempString = tempArr.join('');
-		//console.log('tempString = ' + tempString);
+		
 		switch (length1) {
 			case 1:
 				outputArr = tempString.match(/.{1,1}/g);
 				break;
 			case 2:
 				outputArr = tempString.match(/.{1,2}/g); 
-		     	break;
+		     	        break;
 			case 3:
 				outputArr = tempString.match(/.{1,3}/g);
 				break;
@@ -115,8 +120,3 @@
 	}
 
 })();
-
-
-
-
-
