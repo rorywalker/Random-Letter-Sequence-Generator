@@ -30,7 +30,7 @@
 	
 			var lengthX = 1;
 	    		
-			while(lengthX <= length1) {
+			while (lengthX <= length1) {
 		    		var number = Math.floor(Math.random()*string1.length+1);
 
 		      			tempArr.push(string1[number]);
